@@ -10,7 +10,17 @@ class Pessoa(abc.ABC):
         self.__bairro = bairro
         self.__cidade = cidade
         self.__estado = estado
-
+    #Método que determina como o objeto será impresso
+    def __str__(self):
+        return (f"NOME.....: {self.nome} \n"
+                f"IDADE....: {self.idade} \n"
+                f"RG.......: {self.rg} \n"
+                f"CPF......: {self.cpf} \n"
+                f"CEP......: {self.cep} \n"
+                f"RUA......: {self.rua} \n"
+                f"BAIRRO...: {self.bairro} \n"
+                f"CIDADE...: {self.cidade} \n"
+                f"ESTADO...: {self.estado}")
     @property
     def nome(self):
         return self.__nome
