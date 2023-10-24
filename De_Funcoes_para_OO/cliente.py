@@ -11,7 +11,6 @@ class Cliente(Interface_Passagem):
         self.__data_volta = data_volta
         self.__cont_compra = 0
         self.__cont_cancel = 0
-
     def __str__(self):
         return (f"Viação..................: {self.viacao} \n"
                 f"Passageiro..............: {self.pessoa.nome} \n"  # Acessando o nome da pessoa

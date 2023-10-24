@@ -34,7 +34,7 @@ class Pessoa(abc.ABC):
     @idade.setter
     def idade(self, idade):
         self.__idade = idade
-
+        
     @property
     def rg(self):
         return self.__rg
