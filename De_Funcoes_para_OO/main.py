@@ -4,7 +4,7 @@ from pessoa import Pessoa
 #Criando listas globais
 Lista_pessoa = list()
 Lista_passagem = list()
-
+Lista_assentos_disponiveis = list(range(1, 43))  # Assentos numerados de 1 a 42
 
 #Criando uma estrutura de repetição para exibir o menu
 while True:
@@ -51,11 +51,22 @@ while True:
                 p_cidade_destino = input("DESTINO: ")
                 p_data_ida = input("IDA: ")
                 p_data_volta = input("VOLTA: ")
+                # Mostrar apenas assentos disponíveis
+                print("Assentos disponíveis:")
+                for assento in Lista_assentos_disponiveis:
+                    print(assento)
+                assento_escolhido = int(input("Escolha um assento disponível: "))
+                if assento_escolhido in Lista_assentos_disponiveis:
+                    # Remover o assento escolhido da lista de asentos disponíveis
+                    Lista_assentos_disponiveis.remove(assento_escolhido)
+                    p_assento = assento_escolhido
 
-                # Crie uma instância da classe Cliente usando os atributos da pessoa
-                cliente = Cliente(pessoa, p_viacao, p_cidade_origem, p_cidade_destino, p_data_ida, p_data_volta)
-                # Adicione a instância do cliente à lista
-                Lista_passagem.append(cliente)
+                    # Crie uma instância da classe Cliente usando os atributos da pessoa
+                    cliente = Cliente(pessoa, p_viacao, p_cidade_origem, p_cidade_destino, p_data_ida, p_data_volta, p_assento)
+                    # Adicione a instância do cliente à lista
+                    Lista_passagem.append(cliente)
+                else:
+                    print("Assento escolhido não está disponível!")
             else:
                 print("Número de pessoa inválido.")
     elif opcao == 3:

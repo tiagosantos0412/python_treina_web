@@ -2,25 +2,31 @@ from pessoa import Pessoa
 from insterface_passagem import Interface_Passagem
 
 class Cliente(Interface_Passagem):
-    def __init__(self, pessoa, viacao, cidade_origem, cidade_destino, data_ida, data_volta):
+    def __init__(self, pessoa, viacao, cidade_origem, cidade_destino, data_ida, data_volta, assento):
         self.__pessoa = pessoa
         self.__viacao = viacao
         self.__cidade_origem = cidade_origem
         self.__cidade_destino = cidade_destino
         self.__data_ida = data_ida
         self.__data_volta = data_volta
+        self.__assento = assento
         self.__cont_compra = 0
         self.__cont_cancel = 0
     def __str__(self):
-        return (f"Viação..................: {self.viacao} \n"
+        return (f"------------------------------------------------------------------- \n"
+                f"Viação..................: {self.viacao} \n"
                 f"Passageiro..............: {self.pessoa.nome} \n"  # Acessando o nome da pessoa
                 f"Idade do Passageiro.....: {self.pessoa.idade} \n"  # Acessando a idade da pessoa
                 f"RG do Passageiro........: {self.pessoa.rg} \n"  # Acessando o RG da pessoa
-                f"CPF do Passageiro.......: {self.pessoa.cpf} \n"  # Acessando o CPF da pessoa
+                f"CPF do Passageiro.......: {self.pessoa.cpf} \n" # Acessando o CPF da pessoa
+                f"Poltrona................: {self.assento} \n"  
                 f"Cidade de Origem........: {self.cidade_origem} \n"
                 f"Cidade de Destino.......: {self.cidade_destino} \n"
                 f"Data de Ida.............: {self.data_ida} \n"
-                f"Data de Volta...........: {self.data_volta}")
+                f"Data de Volta...........: {self.data_volta} \n"
+                f"------------------------------------------------------------------- \n")
+
+
 
     @property
     def viacao(self):
@@ -61,6 +67,13 @@ class Cliente(Interface_Passagem):
     @data_volta.setter
     def data_volta(self, data_volta):
         self.__data_volta = data_volta
+
+    @property
+    def assento(self):
+        return self.__assento
+    @assento.setter
+    def assento(self, assento):
+        self.__assento = assento
 
     @property
     def cont_compra(self):

@@ -12,7 +12,8 @@ class Pessoa(abc.ABC):
         self.__estado = estado
     #Método que determina como o objeto será impresso
     def __str__(self):
-        return (f"NOME.....: {self.nome} \n"
+        return (f"------------------------------------------------------------------- \n"
+                f"NOME.....: {self.nome} \n"
                 f"IDADE....: {self.idade} \n"
                 f"RG.......: {self.rg} \n"
                 f"CPF......: {self.cpf} \n"
@@ -20,7 +21,8 @@ class Pessoa(abc.ABC):
                 f"RUA......: {self.rua} \n"
                 f"BAIRRO...: {self.bairro} \n"
                 f"CIDADE...: {self.cidade} \n"
-                f"ESTADO...: {self.estado}")
+                f"ESTADO...: {self.estado} \n"
+                f"------------------------------------------------------------------- \n")
     @property
     def nome(self):
         return self.__nome
@@ -34,7 +36,7 @@ class Pessoa(abc.ABC):
     @idade.setter
     def idade(self, idade):
         self.__idade = idade
-        
+
     @property
     def rg(self):
         return self.__rg
