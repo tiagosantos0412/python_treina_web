@@ -51,10 +51,20 @@ while True:
                 p_cidade_destino = input("DESTINO: ")
                 p_data_ida = input("IDA: ")
                 p_data_volta = input("VOLTA: ")
+
                 # Mostrar apenas assentos disponíveis
                 print("Assentos disponíveis:")
-                for assento in Lista_assentos_disponiveis:
-                    print(assento)
+                #for assento in Lista_assentos_disponiveis:
+                    #print(assento)
+                half = len(Lista_assentos_disponiveis) // 2
+                for i in range(half):
+                    print(f"{Lista_assentos_disponiveis[i]}",
+                          end="\t")  # Use '\t' para criar uma tabulação entre os números
+                print("\n")  # Inserir uma quebra de linha entre as linhas horizontais
+                for i in range(half, len(Lista_assentos_disponiveis)):
+                    print(f"{Lista_assentos_disponiveis[i]}", end="\t")
+                print("\n")
+
                 assento_escolhido = int(input("Escolha um assento disponível: "))
                 if assento_escolhido in Lista_assentos_disponiveis:
                     # Remover o assento escolhido da lista de asentos disponíveis
