@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Tarefas</title>
+</head>
+<body>
+    <h1>Wlcome to Django</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form_tarefa.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
