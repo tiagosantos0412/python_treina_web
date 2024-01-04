@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Tarefas</title>
-</head>
-<body>
-    <table>
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h1>Listagem de tarefas</h1>
+<hr>
+    <table class="table">
       <tr>
         <th>Título</th>
         <th>Descrição</th>
@@ -22,6 +20,5 @@
       {% endfor %}
     </table>
 
-    <a href="{% url 'cadastrar_tarefa' %}">Cadastrar</a>
-</body>
-</html>
+    <a href="{% url 'cadastrar_tarefa' %}" class="btn btn-primary">Cadastrar</a>
+{% endblock conteudo %}
